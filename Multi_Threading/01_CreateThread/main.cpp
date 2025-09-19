@@ -1,25 +1,13 @@
 ﻿/*
-실습 1: CreateThread
 
-WINAPI 호출 규약: 스레드 함수는 반드시 DWORD WINAPI 형태로 선언해야 한다.
-매개변수 전달: ThreadData 구조체를 통해 여러 데이터를 스레드에 전달한다.
-병렬 실행: 두 개의 워커 스레드와 메인 스레드가 동시에 작업을 수행한다.
-스레드 대기: WaitForMultipleObjects를 사용해 모든 스레드의 완료를 기다린다.
-리소스 정리: CloseHandle로 스레드 핸들을 반드시 해제한다.
+	 [ CreateThread ]
 
-=== CreateThread 예제 ===
+	 - WINAPI 호출 규약: 스레드 함수는 반드시 DWORD WINAPI 형태로 선언해야 한다.
+	 - 매개변수 전달: ThreadData 구조체를 통해 여러 데이터를 스레드에 전달한다.
+	 - 병렬 실행: 두 개의 워커 스레드와 메인 스레드가 동시에 작업을 수행한다.
+	 - 스레드 대기: WaitForMultipleObjects를 사용해 모든 스레드의 완료를 기다린다.
+	 - 리소스 정리: CloseHandle로 스레드 핸들을 반드시 해제한다.
 
-스레드 생성 완료:
-- 스레드 1 ID: 1234
-- 스레드 2 ID: 5678
-
-스레드 1 시작: 첫 번째 워커 스레드
-스레드 2 시작: 두 번째 워커 스레드
-메인 스레드: 다른 작업 수행 중...
-스레드 1: 작업 1/3 수행 중...
-스레드 2: 작업 1/5 수행 중...
-메인 스레드: 작업 1/4
-...
 */
 
 #include <windows.h>
@@ -62,6 +50,8 @@ int main()
 	DWORD threadId1, threadId2;
 
 	// Create Thread
+	// 스레드 생성과 동시에 작업 수행이 시작된다.
+	// -> Event를 통해 시작 시기를 제어할 수도 있음
 	HANDLE hThread1 = CreateThread(
 		NULL,                   // 기본 보안 설정
 		0,                      // 기본 스택 크기 (1MB)
@@ -106,7 +96,8 @@ int main()
 	}
 	printf("메인 스레드 작업 완료\n\n");
 
-	// 모든 스레드가 완료될때 까지 대기
+	// WaitForMultipleObjects
+	// 모든 스레드가 완료될때 까지 대기 -> 멀티 스레딩 동기화
 	printf("모든 스레드 완료 대기 중...\n");
 	HANDLE threads[] = { hThread1 , hThread2 };
 	DWORD waitResult = WaitForMultipleObjects(
