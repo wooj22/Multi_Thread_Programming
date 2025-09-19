@@ -71,7 +71,7 @@ int main()
             return -1;
         }
 
-        // 필수 리소스 핸들 따로 저장
+        // Q. 필수 리소스 핸들 따로 저장
         if (resources[i].isEssential) {
             hEssentialThreads[essentialCount++] = hThreads[i];
         }
