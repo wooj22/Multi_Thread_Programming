@@ -91,7 +91,6 @@ unsigned int __stdcall ConsumerThread(void* pParam)
 		// 큐에서 작업 가져오기
 		if (!taskQueue.empty())
 		{
-			
 			task = taskQueue.front();
 			taskQueue.pop();
 			hasTask = true;
@@ -115,6 +114,8 @@ unsigned int __stdcall ConsumerThread(void* pParam)
 			ReleaseSemaphore(semaphore, 1, NULL);
 		}
 	}
+	
+	return 0;
 }
 
 
