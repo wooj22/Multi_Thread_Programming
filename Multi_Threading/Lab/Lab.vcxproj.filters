@@ -13,19 +13,40 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\1">
+      <UniqueIdentifier>{a0fb7129-5ce2-4499-b66c-35ded9d80f5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\3">
+      <UniqueIdentifier>{6fb80e67-7414-4757-a968-8c28e10336b2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Lab1.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\1</Filter>
     </ClCompile>
     <ClCompile Include="Lab2.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\1</Filter>
     </ClCompile>
     <ClCompile Include="Lab3.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\1</Filter>
     </ClCompile>
     <ClCompile Include="Lab4.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\1</Filter>
+    </ClCompile>
+    <ClCompile Include="Lab3-1.cpp">
+      <Filter>소스 파일\3</Filter>
+    </ClCompile>
+    <ClCompile Include="Lab3-2.cpp">
+      <Filter>소스 파일\3</Filter>
+    </ClCompile>
+    <ClCompile Include="Lab3-3.cpp">
+      <Filter>소스 파일\3</Filter>
+    </ClCompile>
+    <ClCompile Include="Lab3-4.cpp">
+      <Filter>소스 파일\3</Filter>
+    </ClCompile>
+    <ClCompile Include="Lab3-5.cpp">
+      <Filter>소스 파일\3</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
