@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{7fdcb984-fa72-4a4b-8329-86ba34db86ae}</ProjectGuid>
-    <RootNamespace>Semaphore</RootNamespace>
+    <ProjectGuid>{87da2744-947c-479e-9d07-d0ca03c89815}</ProjectGuid>
+    <RootNamespace>SpinLock</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
