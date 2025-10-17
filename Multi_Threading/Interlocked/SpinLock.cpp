@@ -11,7 +11,7 @@ using namespace std;
 // SpinLock Class
 class SpinLock
 {
-private: 
+private:
 	volatile LONG locked;
 
 public:
@@ -37,14 +37,14 @@ public:
 // 전역 변수 및 락 객체
 SpinLock		spinLock;							// 공유 데이터를 보호할 스핀락 객체			
 long			counter = 0;						// 스레드들이 증가시킬 공유 변수		
-const int		THREAD_COUNT = 10;					
+const int		THREAD_COUNT = 10;
 const int		INCREMENT_PER_THREAD = 100000;
 
 
 // 스레드 함수
 unsigned int __stdcall ThreadFunction(void* arg)
 {
-	int threadId = *(static_cast<int*>(arg));	
+	int threadId = *(static_cast<int*>(arg));
 
 	for (int i = 0; i < INCREMENT_PER_THREAD; i++)
 	{
