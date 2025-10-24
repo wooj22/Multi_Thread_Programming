@@ -1,0 +1,125 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold">NUMA (Non-Uniform Memory Access) 아키텍처</text>
+  
+  <!-- NUMA 노드 0 -->
+  <g id="numa_node_0">
+    <rect x="50" y="80" width="300" height="220" fill="#E3F2FD" stroke="#1976D2" stroke-width="3" rx="10"/>
+    <text x="200" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold">NUMA 노드 0</text>
+    
+    <!-- CPU 소켓 0 -->
+    <rect x="70" y="120" width="120" height="80" fill="#BBDEFB" stroke="#1565C0" stroke-width="2"/>
+    <text x="130" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">CPU 소켓 0</text>
+    
+    <!-- 코어들 -->
+    <rect x="80" y="150" width="45" height="20" fill="#90CAF9" stroke="#0D47A1"/>
+    <text x="102" y="163" text-anchor="middle" font-family="Arial, sans-serif" font-size="8">코어1</text>
+    
+    <rect x="135" y="150" width="45" height="20" fill="#90CAF9" stroke="#0D47A1"/>
+    <text x="157" y="163" text-anchor="middle" font-family="Arial, sans-serif" font-size="8">코어2</text>
+    
+    <rect x="80" y="175" width="45" height="20" fill="#90CAF9" stroke="#0D47A1"/>
+    <text x="102" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="8">코어3</text>
+    
+    <rect x="135" y="175" width="45" height="20" fill="#90CAF9" stroke="#0D47A1"/>
+    <text x="157" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="8">코어4</text>
+    
+    <!-- 로컬 메모리 -->
+    <rect x="210" y="120" width="120" height="80" fill="#C8E6C9" stroke="#4CAF50" stroke-width="2"/>
+    <text x="270" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">로컬 메모리</text>
+    <text x="270" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">16GB</text>
+    <text x="270" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">지연시간: 50ns</text>
+    <text x="270" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">대역폭: 높음</text>
+    
+    <!-- 로컬 연결 -->
+    <path d="M 190 160 L 210 160" stroke="#4CAF50" stroke-width="3"/>
+    <text x="200" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="8">빠른 접근</text>
+    
+    <!-- 게임 서버 예시 -->
+    <rect x="70" y="220" width="260" height="60" fill="#FFF3E0" stroke="#FF9800" rx="5"/>
+    <text x="200" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">게임 서버 예시</text>
+    <text x="200" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">• 네트워크 처리 스레드</text>
+    <text x="200" y="267" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">• 플레이어 A~D 데이터</text>
+  </g>
+  
+  <!-- NUMA 노드 1 -->
+  <g id="numa_node_1">
+    <rect x="450" y="80" width="300" height="220" fill="#F3E5F5" stroke="#7B1FA2" stroke-width="3" rx="10"/>
+    <text x="600" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold">NUMA 노드 1</text>
+    
+    <!-- CPU 소켓 1 -->
+    <rect x="470" y="120" width="120" height="80" fill="#CE93D8" stroke="#6A1B9A" stroke-width="2"/>
+    <text x="530" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">CPU 소켓 1</text>
+    
+    <!-- 코어들 -->
+    <rect x="480" y="150" width="45" height="20" fill="#BA68C8" stroke="#4A148C"/>
+    <text x="502" y="163" text-anchor="middle" font-family="Arial, sans-serif" font-size="8">코어5</text>
+    
+    <rect x="535" y="150" width="45" height="20" fill="#BA68C8" stroke="#4A148C"/>
+    <text x="557" y="163" text-anchor="middle" font-family="Arial, sans-serif" font-size="8">코어6</text>
+    
+    <rect x="480" y="175" width="45" height="20" fill="#BA68C8" stroke="#4A148C"/>
+    <text x="502" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="8">코어7</text>
+    
+    <rect x="535" y="175" width="45" height="20" fill="#BA68C8" stroke="#4A148C"/>
+    <text x="557" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="8">코어8</text>
+    
+    <!-- 로컬 메모리 -->
+    <rect x="610" y="120" width="120" height="80" fill="#C8E6C9" stroke="#4CAF50" stroke-width="2"/>
+    <text x="670" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">로컬 메모리</text>
+    <text x="670" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">16GB</text>
+    <text x="670" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">지연시간: 50ns</text>
+    <text x="670" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">대역폭: 높음</text>
+    
+    <!-- 로컬 연결 -->
+    <path d="M 590 160 L 610 160" stroke="#4CAF50" stroke-width="3"/>
+    <text x="600" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="8">빠른 접근</text>
+    
+    <!-- 게임 서버 예시 -->
+    <rect x="470" y="220" width="260" height="60" fill="#FFF3E0" stroke="#FF9800" rx="5"/>
+    <text x="600" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">게임 서버 예시</text>
+    <text x="600" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">• 게임 로직 처리 스레드</text>
+    <text x="600" y="267" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">• 플레이어 E~H 데이터</text>
+  </g>
+  
+  <!-- 인터커넥트 -->
+  <g id="interconnect">
+    <path d="M 350 190 L 450 190" stroke="#F44336" stroke-width="4" stroke-dasharray="5,5"/>
+    <text x="400" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold">인터커넥트</text>
+    <text x="400" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">(느린 접근)</text>
+    
+    <!-- 원격 메모리 접근 예시 -->
+    <path d="M 130 200 Q 400 250 670 200" stroke="#F44336" stroke-width="2" fill="none" stroke-dasharray="3,3"/>
+    <text x="400" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">원격 메모리 접근: 지연시간 150ns (3배 느림)</text>
+  </g>
+  
+  <!-- 성능 비교 표 -->
+  <g id="performance_table">
+    <text x="400" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold">메모리 접근 성능 비교</text>
+    
+    <!-- 테이블 헤더 -->
+    <rect x="200" y="360" width="400" height="30" fill="#E0E0E0" stroke="#333"/>
+    <text x="250" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">접근 유형</text>
+    <text x="400" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">지연시간</text>
+    <text x="550" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">대역폭</text>
+    
+    <!-- 로컬 메모리 -->
+    <rect x="200" y="390" width="400" height="30" fill="#C8E6C9" stroke="#333"/>
+    <text x="250" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">로컬 메모리</text>
+    <text x="400" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">50ns</text>
+    <text x="550" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">높음</text>
+    
+    <!-- 원격 메모리 -->
+    <rect x="200" y="420" width="400" height="30" fill="#FFCDD2" stroke="#333"/>
+    <text x="250" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">원격 메모리</text>
+    <text x="400" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">150ns (3배 느림)</text>
+    <text x="550" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">낮음</text>
+  </g>
+  
+  <!-- 게임 서버 최적화 팁 -->
+  <rect x="50" y="480" width="700" height="90" fill="#E8F5E8" stroke="#4CAF50" rx="5"/>
+  <text x="400" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold">게임 서버 NUMA 최적화 팁</text>
+  <text x="400" y="520" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">1. 플레이어 데이터를 NUMA 노드별로 분산 배치</text>
+  <text x="400" y="535" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">2. 스레드를 특정 NUMA 노드에 고정 (CPU Affinity 설정)</text>
+  <text x="400" y="550" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">3. 메모리 할당 시 로컬 노드 우선 정책 사용</text>
+  <text x="400" y="565" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">4. C#의 경우 GC 설정에서 Server GC 모드와 NUMA 인식 기능 활용</text>
+</svg>

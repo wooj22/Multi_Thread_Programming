@@ -1,0 +1,303 @@
+<svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="createdGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9E9E9E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#757575;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="readyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2196F3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1976D2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="runningGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#388E3C;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="waitingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF9800;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F57C00;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="terminatedGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F44336;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D32F2F;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="3" dy="3" stdDeviation="3" flood-color="#00000030"/>
+    </filter>
+    
+    <!-- 화살표 마커들 -->
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1976D2"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#388E3C"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#F57C00"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#D32F2F"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#757575"/>
+    </marker>
+  </defs>
+  
+  <!-- 배경 -->
+  <rect width="1000" height="700" fill="#f8f9fa"/>
+  
+  <!-- 제목 -->
+  <text x="500" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#333">
+    Windows 스레드 상태 전환 (Thread State Transition)
+  </text>
+  
+  <!-- 시작점 -->
+  <circle cx="100" cy="150" r="15" fill="#333" filter="url(#shadow)"/>
+  <text x="100" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">
+    시작
+  </text>
+  
+  <!-- 1. 생성 상태 (Created) -->
+  <rect x="200" y="100" width="120" height="100" rx="15" fill="url(#createdGradient)" filter="url(#shadow)"/>
+  <text x="260" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
+    생성
+  </text>
+  <text x="260" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="white">
+    (Created)
+  </text>
+  <text x="260" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+    스레드 객체 생성
+  </text>
+  <text x="260" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+    아직 실행 전
+  </text>
+  
+  <!-- 2. 준비 상태 (Ready) -->
+  <rect x="450" y="100" width="120" height="100" rx="15" fill="url(#readyGradient)" filter="url(#shadow)"/>
+  <text x="510" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
+    준비
+  </text>
+  <text x="510" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="white">
+    (Ready)
+  </text>
+  <text x="510" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+    실행 가능한 상태
+  </text>
+  <text x="510" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+    CPU 할당 대기
+  </text>
+  
+  <!-- 3. 실행 상태 (Running) -->
+  <rect x="700" y="100" width="120" height="100" rx="15" fill="url(#runningGradient)" filter="url(#shadow)"/>
+  <text x="760" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
+    실행
+  </text>
+  <text x="760" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="white">
+    (Running)
+  </text>
+  <text x="760" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+    CPU에서 실제
+  </text>
+  <text x="760" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+    실행 중
+  </text>
+  
+  <!-- 4. 대기 상태 (Waiting) -->
+  <rect x="450" y="350" width="120" height="100" rx="15" fill="url(#waitingGradient)" filter="url(#shadow)"/>
+  <text x="510" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
+    대기
+  </text>
+  <text x="510" y="405" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="white">
+    (Waiting)
+  </text>
+  <text x="510" y="425" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+    특정 조건이나
+  </text>
+  <text x="510" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+    이벤트 대기
+  </text>
+  
+  <!-- 5. 종료 상태 (Terminated) -->
+  <rect x="700" y="350" width="120" height="100" rx="15" fill="url(#terminatedGradient)" filter="url(#shadow)"/>
+  <text x="760" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
+    종료
+  </text>
+  <text x="760" y="405" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="white">
+    (Terminated)
+  </text>
+  <text x="760" y="425" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+    실행 완료 또는
+  </text>
+  <text x="760" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+    강제 종료
+  </text>
+  
+  <!-- 상태 전환 화살표들 -->
+  
+  <!-- 시작 → 생성 -->
+  <path d="M 115 150 L 185 150" stroke="#757575" stroke-width="3" fill="none" marker-end="url(#arrowGray)"/>
+  <text x="150" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#757575" font-weight="bold">
+    스레드 생성
+  </text>
+  
+  <!-- 생성 → 준비 -->
+  <path d="M 320 150 L 435 150" stroke="#1976D2" stroke-width="3" fill="none" marker-end="url(#arrowBlue)"/>
+  <text x="377" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1976D2" font-weight="bold">
+    Start() 호출
+  </text>
+  
+  <!-- 준비 → 실행 -->
+  <path d="M 570 150 L 685 150" stroke="#388E3C" stroke-width="3" fill="none" marker-end="url(#arrowGreen)"/>
+  <text x="627" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#388E3C" font-weight="bold">
+    스케줄링
+  </text>
+  
+  <!-- 실행 → 준비 (선점) -->
+  <path d="M 700 130 Q 630 80 570 130" stroke="#1976D2" stroke-width="3" fill="none" marker-end="url(#arrowBlue)" stroke-dasharray="5,3"/>
+  <text x="635" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1976D2" font-weight="bold">
+    선점 또는 시간 할당량 소모
+  </text>
+  
+  <!-- 실행 → 대기 -->
+  <path d="M 730 200 Q 680 275 540 350" stroke="#F57C00" stroke-width="3" fill="none" marker-end="url(#arrowOrange)"/>
+  <text x="640" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#F57C00" font-weight="bold">
+    I/O 요청, Sleep,
+  </text>
+  <text x="640" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#F57C00" font-weight="bold">
+    동기화 객체 대기
+  </text>
+  
+  <!-- 대기 → 준비 -->
+  <path d="M 510 350 Q 480 275 510 200" stroke="#1976D2" stroke-width="3" fill="none" marker-end="url(#arrowBlue)"/>
+  <text x="460" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1976D2" font-weight="bold">
+    대기 조건 해결,
+  </text>
+  <text x="460" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1976D2" font-weight="bold">
+    I/O 완료
+  </text>
+  
+  <!-- 실행 → 종료 -->
+  <path d="M 760 200 L 760 335" stroke="#D32F2F" stroke-width="3" fill="none" marker-end="url(#arrowRed)"/>
+  <text x="800" y="267" font-family="Arial, sans-serif" font-size="10" fill="#D32F2F" font-weight="bold">
+    함수 종료,
+  </text>
+  <text x="800" y="282" font-family="Arial, sans-serif" font-size="10" fill="#D32F2F" font-weight="bold">
+    예외 발생,
+  </text>
+  <text x="800" y="297" font-family="Arial, sans-serif" font-size="10" fill="#D32F2F" font-weight="bold">
+    Abort() 호출
+  </text>
+  
+  <!-- 준비 → 종료 (비정상 종료) -->
+  <path d="M 570 180 Q 650 265 700 380" stroke="#D32F2F" stroke-width="2" fill="none" marker-end="url(#arrowRed)" stroke-dasharray="3,3"/>
+  <text x="620" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#D32F2F">
+    비정상 종료
+  </text>
+  
+  <!-- 대기 → 종료 (비정상 종료) -->
+  <path d="M 570 400 L 685 400" stroke="#D32F2F" stroke-width="2" fill="none" marker-end="url(#arrowRed)" stroke-dasharray="3,3"/>
+  <text x="627" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#D32F2F">
+    강제 종료
+  </text>
+  
+  <!-- 하단 설명 박스 -->
+  <rect x="50" y="520" width="900" height="150" rx="10" fill="#E8F5E8" opacity="0.9" filter="url(#shadow)"/>
+  <text x="500" y="545" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">
+    스레드 상태별 특징 및 전환 조건
+  </text>
+  
+  <!-- 상태별 설명 -->
+  <g transform="translate(70, 560)">
+    <rect x="0" y="0" width="160" height="90" rx="5" fill="#9E9E9E" opacity="0.1" stroke="#757575" stroke-width="1"/>
+    <text x="80" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#757575">
+      생성 (Created)
+    </text>
+    <text x="10" y="35" font-family="Arial, sans-serif" font-size="10" fill="#333">
+      • Thread 객체 생성됨
+    </text>
+    <text x="10" y="50" font-family="Arial, sans-serif" font-size="10" fill="#333">
+      • 메모리 할당 완료
+    </text>
+    <text x="10" y="65" font-family="Arial, sans-serif" font-size="10" fill="#333">
+      • Start() 호출 대기
+    </text>
+    <text x="10" y="80" font-family="Arial, sans-serif" font-size="10" fill="#333">
+      • 스택 초기화 완료
+    </text>
+  </g>
+  
+  <g transform="translate(250, 560)">
+    <rect x="0" y="0" width="160" height="90" rx="5" fill="#2196F3" opacity="0.1" stroke="#1976D2" stroke-width="1"/>
+    <text x="80" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1976D2">
+      준비 (Ready)
+    </text>
+    <text x="10" y="35" font-family="Arial, sans-serif" font-size="10" fill="#333">
+      • CPU 할당 대기 중
+    </text>
+    <text x="10" y="50" font-family="Arial, sans-serif" font-size="10" fill="#333">
+      • 스케줄러 큐에 대기
+    </text>
+    <text x="10" y="65" font-family="Arial, sans-serif" font-size="10" fill="#333">
+      • 언제든 실행 가능
+    </text>
+    <text x="10" y="80" font-family="Arial, sans-serif" font-size="10" fill="#333">
+      • 우선순위 기반 대기
+    </text>
+  </g>
+  
+  <g transform="translate(430, 560)">
+    <rect x="0" y="0" width="160" height="90" rx="5" fill="#4CAF50" opacity="0.1" stroke="#388E3C" stroke-width="1"/>
+    <text x="80" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#388E3C">
+      실행 (Running)
+    </text>
+    <text x="10" y="35" font-family="Arial, sans-serif" font-size="10" fill="#333">
+      • CPU 점유 중
+    </text>
+    <text x="10" y="50" font-family="Arial, sans-serif" font-size="10" fill="#333">
+      • 코드 실제 실행
+    </text>
+    <text x="10" y="65" font-family="Arial, sans-serif" font-size="10" fill="#333">
+      • 시간 할당량 소모
+    </text>
+    <text x="10" y="80" font-family="Arial, sans-serif" font-size="10" fill="#333">
+      • 선점 가능 상태
+    </text>
+  </g>
+  
+  <g transform="translate(610, 560)">
+    <rect x="0" y="0" width="160" height="90" rx="5" fill="#FF9800" opacity="0.1" stroke="#F57C00" stroke-width="1"/>
+    <text x="80" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#F57C00">
+      대기 (Waiting)
+    </text>
+    <text x="10" y="35" font-family="Arial, sans-serif" font-size="10" fill="#333">
+      • I/O 작업 대기
+    </text>
+    <text x="10" y="50" font-family="Arial, sans-serif" font-size="10" fill="#333">
+      • Sleep() 상태
+    </text>
+    <text x="10" y="65" font-family="Arial, sans-serif" font-size="10" fill="#333">
+      • 동기화 객체 대기
+    </text>
+    <text x="10" y="80" font-family="Arial, sans-serif" font-size="10" fill="#333">
+      • CPU 사용하지 않음
+    </text>
+  </g>
+  
+  <g transform="translate(790, 560)">
+    <rect x="0" y="0" width="160" height="90" rx="5" fill="#F44336" opacity="0.1" stroke="#D32F2F" stroke-width="1"/>
+    <text x="80" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#D32F2F">
+      종료 (Terminated)
+    </text>
+    <text x="10" y="35" font-family="Arial, sans-serif" font-size="10" fill="#333">
+      • 실행 완료
+    </text>
+    <text x="10" y="50" font-family="Arial, sans-serif" font-size="10" fill="#333">
+      • 리소스 해제 중
+    </text>
+    <text x="10" y="65" font-family="Arial, sans-serif" font-size="10" fill="#333">
+      • 메모리 정리
+    </text>
+    <text x="10" y="80" font-family="Arial, sans-serif" font-size="10" fill="#333">
+      • 복구 불가능
+    </text>
+  </g>
+</svg>

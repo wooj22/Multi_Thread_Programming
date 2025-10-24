@@ -1,0 +1,75 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- 제목 -->
+  <text x="400" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#333">컨텍스트 스위칭의 성능 영향</text>
+  
+  <!-- CPU 캐시 계층 -->
+  <text x="100" y="70" font-size="16" font-weight="bold" fill="#333">CPU 캐시 계층</text>
+  
+  <!-- L1 캐시 -->
+  <rect x="100" y="90" width="200" height="40" fill="#e74c3c" stroke="#c0392b" stroke-width="2" rx="3"/>
+  <text x="120" y="110" font-size="12" font-weight="bold" fill="white">L1 캐시</text>
+  <text x="120" y="125" font-size="11" fill="white">가장 빠름 (1-2 cycle)</text>
+  
+  <!-- L2 캐시 -->
+  <rect x="100" y="140" width="250" height="40" fill="#f39c12" stroke="#e67e22" stroke-width="2" rx="3"/>
+  <text x="120" y="160" font-size="12" font-weight="bold" fill="white">L2 캐시</text>
+  <text x="120" y="175" font-size="11" fill="white">보통 속도 (10-20 cycle)</text>
+  
+  <!-- L3 캐시 -->
+  <rect x="100" y="190" width="300" height="40" fill="#3498db" stroke="#2980b9" stroke-width="2" rx="3"/>
+  <text x="120" y="210" font-size="12" font-weight="bold" fill="white">L3 캐시</text>
+  <text x="120" y="225" font-size="11" fill="white">느림 (30-50 cycle)</text>
+  
+  <!-- 메인 메모리 -->
+  <rect x="100" y="240" width="400" height="40" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2" rx="3"/>
+  <text x="120" y="260" font-size="12" font-weight="bold" fill="white">메인 메모리 (RAM)</text>
+  <text x="120" y="275" font-size="11" fill="white">매우 느림 (100-300 cycle)</text>
+  
+  <!-- 컨텍스트 스위칭 영향 -->
+  <text x="550" y="70" font-size="16" font-weight="bold" fill="#333">컨텍스트 스위칭 시</text>
+  
+  <!-- Before/After -->
+  <rect x="520" y="90" width="120" height="80" fill="#27ae60" stroke="#229954" stroke-width="2" rx="3"/>
+  <text x="580" y="115" text-anchor="middle" font-size="12" font-weight="bold" fill="white">스위칭 전</text>
+  <text x="530" y="135" font-size="10" fill="white">• 캐시에 데이터 있음</text>
+  <text x="530" y="150" font-size="10" fill="white">• 빠른 접근 가능</text>
+  <text x="530" y="165" font-size="10" fill="white">• 높은 성능</text>
+  
+  <rect x="650" y="90" width="120" height="80" fill="#e74c3c" stroke="#c0392b" stroke-width="2" rx="3"/>
+  <text x="710" y="115" text-anchor="middle" font-size="12" font-weight="bold" fill="white">스위칭 후</text>
+  <text x="660" y="135" font-size="10" fill="white">• 캐시 미스 발생</text>
+  <text x="660" y="150" font-size="10" fill="white">• 메모리에서 로드</text>
+  <text x="660" y="165" font-size="10" fill="white">• 성능 저하</text>
+  
+  <!-- 화살표 -->
+  <path d="M 640 130 L 650 130" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- 시간 소요 차트 -->
+  <text x="400" y="320" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">작업 수행 시간 비교</text>
+  
+  <!-- 정상 상황 -->
+  <rect x="200" y="350" width="80" height="30" fill="#27ae60" stroke="#229954" stroke-width="2" rx="3"/>
+  <text x="240" y="370" text-anchor="middle" font-size="11" font-weight="bold" fill="white">캐시 히트</text>
+  <text x="240" y="400" text-anchor="middle" font-size="10" fill="#333">1-2 사이클</text>
+  
+  <!-- 컨텍스트 스위칭 후 -->
+  <rect x="520" y="350" width="80" height="100" fill="#e74c3c" stroke="#c0392b" stroke-width="2" rx="3"/>
+  <text x="560" y="385" text-anchor="middle" font-size="11" font-weight="bold" fill="white">캐시 미스</text>
+  <text x="560" y="400" text-anchor="middle" font-size="9" fill="white">(메모리 접근)</text>
+  <text x="560" y="470" text-anchor="middle" font-size="10" fill="#333">100-300 사이클</text>
+  
+  <!-- 성능 차이 표시 -->
+  <path d="M 320 365 L 480 365" stroke="#f39c12" stroke-width="3" fill="none"/>
+  <text x="400" y="340" text-anchor="middle" font-size="12" font-weight="bold" fill="#f39c12">100배 이상 차이!</text>
+  
+  <!-- 게임 서버 예시 -->
+  <rect x="50" y="440" width="700" height="40" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1" rx="3"/>
+  <text x="60" y="465" font-size="12" font-weight="bold" fill="#333">게임 서버 예시: 플레이어 데이터가 캐시에서 밀려나면 데이터베이스나 메모리에서 다시 로드해야 함</text>
+  
+  <!-- 화살표 정의 -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+</svg>

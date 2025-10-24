@@ -1,0 +1,214 @@
+<svg viewBox="0 0 900 650" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="threadGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF9800;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F57C00;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="tebGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2196F3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1976D2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="stackGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9C27B0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7B1FA2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="registerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#388E3C;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="idGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E91E63;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C2185B;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="3" dy="3" stdDeviation="3" flood-color="#00000030"/>
+    </filter>
+  </defs>
+  
+  <!-- 배경 -->
+  <rect width="900" height="650" fill="#f8f9fa"/>
+  
+  <!-- 제목 -->
+  <text x="450" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#333">
+    스레드 구성 요소 (Thread Components)
+  </text>
+  
+  <!-- 스레드 컨테이너 -->
+  <rect x="50" y="60" width="800" height="520" rx="15" fill="url(#threadGradient)" opacity="0.1" stroke="#FF9800" stroke-width="3" filter="url(#shadow)"/>
+  <text x="450" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#F57C00">
+    스레드 (Thread)
+  </text>
+  
+  <!-- TEB (Thread Environment Block) -->
+  <g transform="translate(80, 120)">
+    <rect x="0" y="0" width="300" height="200" rx="10" fill="url(#tebGradient)" filter="url(#shadow)"/>
+    <text x="150" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
+      TEB (Thread Environment Block)
+    </text>
+    <text x="150" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">
+      스레드별 정보 저장
+    </text>
+    
+    <!-- TEB 내부 구조 -->
+    <rect x="20" y="60" width="260" height="120" rx="5" fill="white" opacity="0.9"/>
+    
+    <!-- TEB 필드들 -->
+    <text x="30" y="80" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1976D2">스레드 정보:</text>
+    <text x="40" y="95" font-family="Arial, sans-serif" font-size="10" fill="#333">• 스레드 ID: 0x2A4C</text>
+    <text x="40" y="108" font-family="Arial, sans-serif" font-size="10" fill="#333">• 프로세스 ID: 0x1F8A</text>
+    <text x="40" y="121" font-family="Arial, sans-serif" font-size="10" fill="#333">• 스택 베이스: 0x00FF0000</text>
+    <text x="40" y="134" font-family="Arial, sans-serif" font-size="10" fill="#333">• 스택 한계: 0x00FE0000</text>
+    <text x="40" y="147" font-family="Arial, sans-serif" font-size="10" fill="#333">• 예외 핸들러 체인</text>
+    <text x="40" y="160" font-family="Arial, sans-serif" font-size="10" fill="#333">• 스레드 로컬 스토리지</text>
+    <text x="40" y="173" font-family="Arial, sans-serif" font-size="10" fill="#333">• 보안 컨텍스트</text>
+  </g>
+  
+  <!-- 스택 (Stack) -->
+  <g transform="translate(420, 120)">
+    <rect x="0" y="0" width="180" height="350" rx="10" fill="url(#stackGradient)" filter="url(#shadow)"/>
+    <text x="90" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
+      스택 (Stack)
+    </text>
+    <text x="90" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">
+      지역 변수와 함수 호출 정보
+    </text>
+    
+    <!-- 스택 프레임들 -->
+    <rect x="20" y="60" width="140" height="40" rx="3" fill="#E1BEE7" stroke="#9C27B0" stroke-width="1"/>
+    <text x="90" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#4A148C">
+      main() 함수
+    </text>
+    <text x="90" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#4A148C">
+      지역변수: argc, argv
+    </text>
+    
+    <rect x="20" y="110" width="140" height="40" rx="3" fill="#E1BEE7" stroke="#9C27B0" stroke-width="1"/>
+    <text x="90" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#4A148C">
+      processData() 함수
+    </text>
+    <text x="90" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#4A148C">
+      지역변수: buffer, size
+    </text>
+    
+    <rect x="20" y="160" width="140" height="40" rx="3" fill="#E1BEE7" stroke="#9C27B0" stroke-width="1"/>
+    <text x="90" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#4A148C">
+      calculateSum() 함수
+    </text>
+    <text x="90" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#4A148C">
+      지역변수: sum, i
+    </text>
+    
+    <rect x="20" y="210" width="140" height="30" rx="3" fill="#FCE4EC" stroke="#E91E63" stroke-width="1"/>
+    <text x="90" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#AD1457">
+      현재 실행 위치
+    </text>
+    <text x="90" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#AD1457">
+      (스택 포인터)
+    </text>
+    
+    <!-- 스택 방향 화살표 -->
+    <path d="M 170 250 L 170 290" stroke="#7B1FA2" stroke-width="2" marker-end="url(#stackArrow)"/>
+    <defs>
+      <marker id="stackArrow" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#7B1FA2"/>
+      </marker>
+    </defs>
+    <text x="175" y="270" font-family="Arial, sans-serif" font-size="9" fill="#7B1FA2">스택 증가</text>
+    <text x="175" y="282" font-family="Arial, sans-serif" font-size="9" fill="#7B1FA2">방향</text>
+    
+    <!-- 빈 스택 공간 -->
+    <rect x="20" y="300" width="140" height="30" rx="3" fill="white" opacity="0.3" stroke="#9C27B0" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="90" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">
+      사용 가능한 스택 공간
+    </text>
+  </g>
+  
+  <!-- 레지스터 컨텍스트 -->
+  <g transform="translate(640, 120)">
+    <rect x="0" y="0" width="200" height="280" rx="10" fill="url(#registerGradient)" filter="url(#shadow)"/>
+    <text x="100" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
+      레지스터 컨텍스트
+    </text>
+    <text x="100" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">
+      CPU 레지스터 상태
+    </text>
+    
+    <!-- 레지스터 목록 -->
+    <rect x="20" y="60" width="160" height="200" rx="5" fill="white" opacity="0.95"/>
+    <text x="30" y="80" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#388E3C">범용 레지스터:</text>
+    <text x="40" y="95" font-family="Arial, sans-serif" font-size="10" fill="#333">EAX: 0x12345678</text>
+    <text x="40" y="108" font-family="Arial, sans-serif" font-size="10" fill="#333">EBX: 0xABCDEF00</text>
+    <text x="40" y="121" font-family="Arial, sans-serif" font-size="10" fill="#333">ECX: 0x00FF00FF</text>
+    <text x="40" y="134" font-family="Arial, sans-serif" font-size="10" fill="#333">EDX: 0x11223344</text>
+    
+    <text x="30" y="155" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#388E3C">제어 레지스터:</text>
+    <text x="40" y="170" font-family="Arial, sans-serif" font-size="10" fill="#333">ESP: 0x00FEF4C0 (스택 포인터)</text>
+    <text x="40" y="183" font-family="Arial, sans-serif" font-size="10" fill="#333">EBP: 0x00FEF500 (베이스 포인터)</text>
+    <text x="40" y="196" font-family="Arial, sans-serif" font-size="10" fill="#333">EIP: 0x00401234 (명령 포인터)</text>
+    
+    <text x="30" y="217" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#388E3C">상태 레지스터:</text>
+    <text x="40" y="232" font-family="Arial, sans-serif" font-size="10" fill="#333">EFLAGS: 0x00000246</text>
+    <text x="40" y="245" font-family="Arial, sans-serif" font-size="10" fill="#333">  (Zero, Parity, Interrupt)</text>
+  </g>
+  
+  <!-- 스레드 ID -->
+  <g transform="translate(80, 360)">
+    <rect x="0" y="0" width="300" height="100" rx="10" fill="url(#idGradient)" filter="url(#shadow)"/>
+    <text x="150" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
+      스레드 ID (Thread ID)
+    </text>
+    <text x="150" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">
+      시스템 전체에서 유일한 식별자
+    </text>
+    
+    <rect x="50" y="55" width="200" height="30" rx="5" fill="white" opacity="0.9"/>
+    <text x="150" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#C2185B">
+      TID: 10828 (0x2A4C)
+    </text>
+  </g>
+  
+  <!-- 연결선들 -->
+  <g stroke="#666" stroke-width="2" stroke-dasharray="3,3" fill="none">
+    <!-- TEB에서 스택으로 -->
+    <path d="M 380 180 L 420 180"/>
+    <text x="400" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">스택 정보</text>
+    
+    <!-- TEB에서 레지스터로 -->
+    <path d="M 380 160 Q 500 140 640 160"/>
+    <text x="510" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">컨텍스트 정보</text>
+    
+    <!-- TEB에서 스레드 ID로 -->
+    <path d="M 230 320 L 230 360"/>
+    <text x="240" y="340" font-family="Arial, sans-serif" font-size="9" fill="#666">ID 관리</text>
+  </g>
+  
+  <!-- 하단 설명 박스 -->
+  <rect x="50" y="500" width="800" height="120" rx="10" fill="#E8F5E8" opacity="0.8" filter="url(#shadow)"/>
+  <text x="450" y="525" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#333">
+    스레드 구성 요소별 역할
+  </text>
+  
+  <g transform="translate(70, 540)">
+    <circle cx="10" cy="10" r="8" fill="#2196F3"/>
+    <text x="25" y="15" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1976D2">TEB:</text>
+    <text x="60" y="15" font-family="Arial, sans-serif" font-size="11" fill="#333">스레드의 메타데이터와 시스템 정보를 저장하는 구조체</text>
+  </g>
+  
+  <g transform="translate(70, 560)">
+    <circle cx="10" cy="10" r="8" fill="#9C27B0"/>
+    <text x="25" y="15" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#7B1FA2">스택:</text>
+    <text x="70" y="15" font-family="Arial, sans-serif" font-size="11" fill="#333">함수 호출, 지역 변수, 매개변수를 저장하는 메모리 영역 (LIFO 구조)</text>
+  </g>
+  
+  <g transform="translate(70, 580)">
+    <circle cx="10" cy="10" r="8" fill="#4CAF50"/>
+    <text x="25" y="15" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#388E3C">레지스터:</text>
+    <text x="90" y="15" font-family="Arial, sans-serif" font-size="11" fill="#333">CPU의 현재 실행 상태를 나타내는 레지스터 값들의 스냅샷</text>
+  </g>
+  
+  <g transform="translate(70, 600)">
+    <circle cx="10" cy="10" r="8" fill="#E91E63"/>
+    <text x="25" y="15" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#C2185B">스레드 ID:</text>
+    <text x="95" y="15" font-family="Arial, sans-serif" font-size="11" fill="#333">운영체제가 스레드를 식별하고 관리하기 위한 고유 번호</text>
+  </g>
+</svg>

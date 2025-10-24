@@ -1,0 +1,91 @@
+<svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- 상황 1: 초기 상태 -->
+  <text x="450" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold">캐시 일관성 문제와 MESI 프로토콜</text>
+  
+  <!-- 상황 1 -->
+  <g id="situation1">
+    <text x="150" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold">1단계: 두 코어가 같은 데이터 읽기</text>
+    
+    <!-- 코어 1 -->
+    <rect x="50" y="90" width="120" height="80" fill="#E3F2FD" stroke="#1976D2" stroke-width="2"/>
+    <text x="110" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">코어 1</text>
+    
+    <!-- 코어 1 L1 캐시 -->
+    <rect x="60" y="120" width="100" height="30" fill="#BBDEFB" stroke="#1565C0"/>
+    <text x="110" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">playerId = 100</text>
+    <text x="110" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">(Shared)</text>
+    
+    <!-- 코어 2 -->
+    <rect x="200" y="90" width="120" height="80" fill="#E3F2FD" stroke="#1976D2" stroke-width="2"/>
+    <text x="260" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">코어 2</text>
+    
+    <!-- 코어 2 L1 캐시 -->
+    <rect x="210" y="120" width="100" height="30" fill="#BBDEFB" stroke="#1565C0"/>
+    <text x="260" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">playerId = 100</text>
+    <text x="260" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">(Shared)</text>
+    
+    <!-- 메모리 -->
+    <rect x="150" y="190" width="120" height="30" fill="#FFE0E0" stroke="#F44336"/>
+    <text x="210" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">playerId = 100</text>
+  </g>
+  
+  <!-- 상황 2 -->
+  <g id="situation2">
+    <text x="600" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold">2단계: 코어 1이 데이터 수정</text>
+    
+    <!-- 코어 1 -->
+    <rect x="500" y="90" width="120" height="80" fill="#E3F2FD" stroke="#1976D2" stroke-width="2"/>
+    <text x="560" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">코어 1</text>
+    
+    <!-- 코어 1 L1 캐시 (수정됨) -->
+    <rect x="510" y="120" width="100" height="30" fill="#C8E6C9" stroke="#4CAF50" stroke-width="2"/>
+    <text x="560" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">playerId = 200</text>
+    <text x="560" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">(Modified)</text>
+    
+    <!-- 코어 2 -->
+    <rect x="650" y="90" width="120" height="80" fill="#E3F2FD" stroke="#1976D2" stroke-width="2"/>
+    <text x="710" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">코어 2</text>
+    
+    <!-- 코어 2 L1 캐시 (무효화됨) -->
+    <rect x="660" y="120" width="100" height="30" fill="#FFCDD2" stroke="#F44336" stroke-width="2"/>
+    <text x="710" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">playerId = 100</text>
+    <text x="710" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">(Invalid)</text>
+    
+    <!-- 메모리 (아직 업데이트 안됨) -->
+    <rect x="600" y="190" width="120" height="30" fill="#FFE0E0" stroke="#F44336"/>
+    <text x="660" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">playerId = 100</text>
+    
+    <!-- 무효화 신호 -->
+    <path d="M 620 140 Q 635 120 650 140" stroke="#F44336" stroke-width="2" fill="none"/>
+    <text x="635" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="8">무효화 신호</text>
+  </g>
+  
+  <!-- MESI 상태 설명 -->
+  <g id="mesi_states">
+    <text x="450" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold">MESI 프로토콜 상태</text>
+    
+    <rect x="50" y="290" width="180" height="150" fill="#F5F5F5" stroke="#333" rx="5"/>
+    <text x="140" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">M - Modified</text>
+    <text x="140" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">이 캐시만 최신 데이터를</text>
+    <text x="140" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">가지고 있고 수정됨</text>
+    
+    <rect x="270" y="290" width="180" height="150" fill="#F5F5F5" stroke="#333" rx="5"/>
+    <text x="360" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">E - Exclusive</text>
+    <text x="360" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">이 캐시만 데이터를</text>
+    <text x="360" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">가지고 있음 (수정 안됨)</text>
+    
+    <rect x="490" y="290" width="180" height="150" fill="#F5F5F5" stroke="#333" rx="5"/>
+    <text x="580" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">S - Shared</text>
+    <text x="580" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">여러 캐시가 같은</text>
+    <text x="580" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">데이터를 공유</text>
+    
+    <rect x="710" y="290" width="180" height="150" fill="#F5F5F5" stroke="#333" rx="5"/>
+    <text x="800" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">I - Invalid</text>
+    <text x="800" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">캐시 데이터가</text>
+    <text x="800" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">유효하지 않음</text>
+  </g>
+  
+  <!-- 게임 서버 예시 -->
+  <text x="450" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-style="italic">게임 서버 예시: 플레이어의 HP 데이터를 여러 스레드가 동시에 처리할 때</text>
+  <text x="450" y="485" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-style="italic">한 스레드가 HP를 감소시키면 다른 스레드의 캐시는 자동으로 무효화됩니다</text>
+</svg>

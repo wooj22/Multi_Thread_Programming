@@ -1,0 +1,103 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- 제목 -->
+  <text x="400" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#333">게임 클라이언트의 주요 스레드들</text>
+  
+  <!-- 메인 스레드 (렌더링) -->
+  <rect x="50" y="80" width="150" height="100" fill="#e74c3c" stroke="#c0392b" stroke-width="3" rx="5"/>
+  <text x="125" y="105" text-anchor="middle" font-size="14" font-weight="bold" fill="white">메인 스레드</text>
+  <text x="125" y="125" text-anchor="middle" font-size="12" fill="white">(렌더링)</text>
+  <text x="60" y="145" font-size="10" fill="white">• 화면 그리기</text>
+  <text x="60" y="160" font-size="10" fill="white">• UI 업데이트</text>
+  <text x="60" y="175" font-size="10" fill="white">• 60fps 유지</text>
+  
+  <!-- 입력 처리 스레드 -->
+  <rect x="220" y="80" width="150" height="100" fill="#3498db" stroke="#2980b9" stroke-width="3" rx="5"/>
+  <text x="295" y="105" text-anchor="middle" font-size="14" font-weight="bold" fill="white">입력 처리</text>
+  <text x="295" y="125" text-anchor="middle" font-size="12" fill="white">스레드</text>
+  <text x="230" y="145" font-size="10" fill="white">• 키보드/마우스</text>
+  <text x="230" y="160" font-size="10" fill="white">• 게임패드</text>
+  <text x="230" y="175" font-size="10" fill="white">• 터치 입력</text>
+  
+  <!-- 오디오 스레드 -->
+  <rect x="390" y="80" width="150" height="100" fill="#27ae60" stroke="#229954" stroke-width="3" rx="5"/>
+  <text x="465" y="105" text-anchor="middle" font-size="14" font-weight="bold" fill="white">오디오 스레드</text>
+  <text x="400" y="145" font-size="10" fill="white">• 배경음악</text>
+  <text x="400" y="160" font-size="10" fill="white">• 효과음</text>
+  <text x="400" y="175" font-size="10" fill="white">• 실시간 믹싱</text>
+  
+  <!-- 네트워크 스레드 -->
+  <rect x="560" y="80" width="150" height="100" fill="#f39c12" stroke="#e67e22" stroke-width="3" rx="5"/>
+  <text x="635" y="105" text-anchor="middle" font-size="14" font-weight="bold" fill="white">네트워크</text>
+  <text x="635" y="125" text-anchor="middle" font-size="12" fill="white">스레드</text>
+  <text x="570" y="145" font-size="10" fill="white">• 서버 통신</text>
+  <text x="570" y="160" font-size="10" fill="white">• 패킷 송수신</text>
+  <text x="570" y="175" font-size="10" fill="white">• 핑 관리</text>
+  
+  <!-- 게임 로직 스레드 -->
+  <rect x="120" y="220" width="150" height="100" fill="#9b59b6" stroke="#8e44ad" stroke-width="3" rx="5"/>
+  <text x="195" y="245" text-anchor="middle" font-size="14" font-weight="bold" fill="white">게임 로직</text>
+  <text x="195" y="265" text-anchor="middle" font-size="12" fill="white">스레드</text>
+  <text x="130" y="285" font-size="10" fill="white">• AI 계산</text>
+  <text x="130" y="300" font-size="10" fill="white">• 물리 시뮬레이션</text>
+  <text x="130" y="315" font-size="10" fill="white">• 충돌 검사</text>
+  
+  <!-- 파일 I/O 스레드 -->
+  <rect x="300" y="220" width="150" height="100" fill="#34495e" stroke="#2c3e50" stroke-width="3" rx="5"/>
+  <text x="375" y="245" text-anchor="middle" font-size="14" font-weight="bold" fill="white">파일 I/O</text>
+  <text x="375" y="265" text-anchor="middle" font-size="12" fill="white">스레드</text>
+  <text x="310" y="285" font-size="10" fill="white">• 텍스처 로딩</text>
+  <text x="310" y="300" font-size="10" fill="white">• 사운드 로딩</text>
+  <text x="310" y="315" font-size="10" fill="white">• 세이브/로드</text>
+  
+  <!-- 백그라운드 작업 스레드 -->
+  <rect x="480" y="220" width="150" height="100" fill="#95a5a6" stroke="#7f8c8d" stroke-width="3" rx="5"/>
+  <text x="555" y="245" text-anchor="middle" font-size="14" font-weight="bold" fill="white">백그라운드</text>
+  <text x="555" y="265" text-anchor="middle" font-size="12" fill="white">작업</text>
+  <text x="490" y="285" font-size="10" fill="white">• 업데이트 확인</text>
+  <text x="490" y="300" font-size="10" fill="white">• 캐시 정리</text>
+  <text x="490" y="315" font-size="10" fill="white">• 로그 기록</text>
+  
+  <!-- 컨텍스트 스위칭 표시 -->
+  <text x="400" y="380" text-anchor="middle" font-size="16" font-weight="bold" fill="#e74c3c">컨텍스트 스위칭 발생 지점</text>
+  
+  <!-- 화살표들 (스위칭 표시) -->
+  <path d="M 200 180 Q 300 200 400 180" stroke="#e74c3c" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+  <path d="M 370 180 Q 470 200 560 180" stroke="#e74c3c" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+  <path d="M 270 220 Q 350 200 430 220" stroke="#e74c3c" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+  
+  <!-- 성능 영향 박스 -->
+  <rect x="50" y="420" width="700" height="150" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2" rx="5"/>
+  <text x="400" y="445" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">컨텍스트 스위칭으로 인한 성능 영향</text>
+  
+  <!-- 영향 항목들 -->
+  <rect x="70" y="460" width="160" height="80" fill="#ffebee" stroke="#e74c3c" stroke-width="1" rx="3"/>
+  <text x="150" y="480" text-anchor="middle" font-size="12" font-weight="bold" fill="#c0392b">프레임 드롭</text>
+  <text x="80" y="500" font-size="10" fill="#666">• 60fps → 30fps</text>
+  <text x="80" y="515" font-size="10" fill="#666">• 화면 끊김</text>
+  <text x="80" y="530" font-size="10" fill="#666">• 버벅임 현상</text>
+  
+  <rect x="250" y="460" width="160" height="80" fill="#e3f2fd" stroke="#3498db" stroke-width="1" rx="3"/>
+  <text x="330" y="480" text-anchor="middle" font-size="12" font-weight="bold" fill="#2980b9">입력 지연</text>
+  <text x="260" y="500" font-size="10" fill="#666">• 마우스 지연</text>
+  <text x="260" y="515" font-size="10" fill="#666">• 키보드 응답성↓</text>
+  <text x="260" y="530" font-size="10" fill="#666">• 조작감 저하</text>
+  
+  <rect x="430" y="460" width="160" height="80" fill="#e8f5e8" stroke="#27ae60" stroke-width="1" rx="3"/>
+  <text x="510" y="480" text-anchor="middle" font-size="12" font-weight="bold" fill="#229954">사운드 끊김</text>
+  <text x="440" y="500" font-size="10" fill="#666">• 오디오 버퍼 부족</text>
+  <text x="440" y="515" font-size="10" fill="#666">• 소리 끊김/깨짐</text>
+  <text x="440" y="530" font-size="10" fill="#666">• 동기화 문제</text>
+  
+  <rect x="610" y="460" width="160" height="80" fill="#fff3e0" stroke="#f39c12" stroke-width="1" rx="3"/>
+  <text x="690" y="480" text-anchor="middle" font-size="12" font-weight="bold" fill="#e67e22">로딩 지연</text>
+  <text x="620" y="500" font-size="10" fill="#666">• 텍스처 로딩↓</text>
+  <text x="620" y="515" font-size="10" fill="#666">• 파일 I/O 지연</text>
+  <text x="620" y="530" font-size="10" fill="#666">• 로딩 시간 증가</text>
+  
+  <!-- 화살표 정의 -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e74c3c"/>
+    </marker>
+  </defs>
+</svg>

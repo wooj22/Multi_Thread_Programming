@@ -1,0 +1,89 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- CPU 전체 프레임 -->
+  <rect x="50" y="50" width="700" height="300" rx="10" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="400" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold">4코어 8스레드 CPU</text>
+  
+  <!-- 물리적 코어들 -->
+  <g id="core1">
+    <rect x="80" y="80" width="150" height="120" rx="5" fill="#E3F2FD" stroke="#1976D2" stroke-width="2"/>
+    <text x="155" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">물리적 코어 1</text>
+    
+    <!-- 논리적 스레드 -->
+    <rect x="90" y="110" width="60" height="40" fill="#BBDEFB" stroke="#1565C0"/>
+    <text x="120" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">스레드 1</text>
+    <text x="120" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">논리적</text>
+    
+    <rect x="160" y="110" width="60" height="40" fill="#BBDEFB" stroke="#1565C0"/>
+    <text x="190" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">스레드 2</text>
+    <text x="190" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">논리적</text>
+    
+    <!-- L1 캐시 -->
+    <rect x="100" y="160" width="100" height="25" fill="#FFF3E0" stroke="#F57C00"/>
+    <text x="150" y="177" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">L1 캐시</text>
+  </g>
+  
+  <g id="core2">
+    <rect x="260" y="80" width="150" height="120" rx="5" fill="#E3F2FD" stroke="#1976D2" stroke-width="2"/>
+    <text x="335" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">물리적 코어 2</text>
+    
+    <rect x="270" y="110" width="60" height="40" fill="#BBDEFB" stroke="#1565C0"/>
+    <text x="300" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">스레드 3</text>
+    <text x="300" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">논리적</text>
+    
+    <rect x="340" y="110" width="60" height="40" fill="#BBDEFB" stroke="#1565C0"/>
+    <text x="370" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">스레드 4</text>
+    <text x="370" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">논리적</text>
+    
+    <rect x="280" y="160" width="100" height="25" fill="#FFF3E0" stroke="#F57C00"/>
+    <text x="330" y="177" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">L1 캐시</text>
+  </g>
+  
+  <g id="core3">
+    <rect x="440" y="80" width="150" height="120" rx="5" fill="#E3F2FD" stroke="#1976D2" stroke-width="2"/>
+    <text x="515" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">물리적 코어 3</text>
+    
+    <rect x="450" y="110" width="60" height="40" fill="#BBDEFB" stroke="#1565C0"/>
+    <text x="480" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">스레드 5</text>
+    <text x="480" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">논리적</text>
+    
+    <rect x="520" y="110" width="60" height="40" fill="#BBDEFB" stroke="#1565C0"/>
+    <text x="550" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">스레드 6</text>
+    <text x="550" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">논리적</text>
+    
+    <rect x="460" y="160" width="100" height="25" fill="#FFF3E0" stroke="#F57C00"/>
+    <text x="510" y="177" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">L1 캐시</text>
+  </g>
+  
+  <g id="core4">
+    <rect x="620" y="80" width="150" height="120" rx="5" fill="#E3F2FD" stroke="#1976D2" stroke-width="2"/>
+    <text x="695" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">물리적 코어 4</text>
+    
+    <rect x="630" y="110" width="60" height="40" fill="#BBDEFB" stroke="#1565C0"/>
+    <text x="660" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">스레드 7</text>
+    <text x="660" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">논리적</text>
+    
+    <rect x="700" y="110" width="60" height="40" fill="#BBDEFB" stroke="#1565C0"/>
+    <text x="730" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">스레드 8</text>
+    <text x="730" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">논리적</text>
+    
+    <rect x="640" y="160" width="100" height="25" fill="#FFF3E0" stroke="#F57C00"/>
+    <text x="690" y="177" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">L1 캐시</text>
+  </g>
+  
+  <!-- 공유 L3 캐시 -->
+  <rect x="120" y="230" width="560" height="40" fill="#E8F5E8" stroke="#4CAF50" stroke-width="2"/>
+  <text x="400" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold">L3 캐시 (공유)</text>
+  
+  <!-- 메모리 -->
+  <rect x="300" y="290" width="200" height="40" fill="#FFE0E0" stroke="#F44336" stroke-width="2"/>
+  <text x="400" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold">메인 메모리 (RAM)</text>
+  
+  <!-- 화살표들 -->
+  <path d="M 400 270 L 400 290" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+</svg>

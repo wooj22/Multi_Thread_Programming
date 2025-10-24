@@ -1,0 +1,89 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- 제목 -->
+  <text x="400" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#333">페이지 폴트로 인한 컨텍스트 스위칭 과정</text>
+  
+  <!-- 사용자 모드 -->
+  <rect x="50" y="80" width="700" height="100" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" rx="5"/>
+  <text x="70" y="105" font-size="14" font-weight="bold" fill="#1976d2">사용자 모드 (User Mode)</text>
+  
+  <!-- 스레드 실행 -->
+  <rect x="100" y="120" width="150" height="40" fill="#4caf50" stroke="#388e3c" stroke-width="2" rx="3"/>
+  <text x="175" y="145" text-anchor="middle" font-size="12" font-weight="bold" fill="white">스레드 실행 중</text>
+  
+  <!-- 메모리 할당 요청 -->
+  <rect x="300" y="120" width="180" height="40" fill="#ff9800" stroke="#f57c00" stroke-width="2" rx="3"/>
+  <text x="390" y="145" text-anchor="middle" font-size="12" font-weight="bold" fill="white">대용량 메모리 할당</text>
+  
+  <!-- 페이지 폴트 발생 -->
+  <rect x="530" y="120" width="150" height="40" fill="#f44336" stroke="#d32f2f" stroke-width="2" rx="3"/>
+  <text x="605" y="145" text-anchor="middle" font-size="12" font-weight="bold" fill="white">페이지 폴트!</text>
+  
+  <!-- 화살표 1 -->
+  <path d="M 250 140 L 300 140" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 480 140 L 530 140" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- 커널 모드 전환 -->
+  <path d="M 605 160 L 605 220" stroke="#f44336" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="620" y="190" font-size="11" fill="#f44336" font-weight="bold">커널 모드로 전환</text>
+  
+  <!-- 커널 모드 -->
+  <rect x="50" y="230" width="700" height="200" fill="#ffebee" stroke="#f44336" stroke-width="2" rx="5"/>
+  <text x="70" y="255" font-size="14" font-weight="bold" fill="#d32f2f">커널 모드 (Kernel Mode)</text>
+  
+  <!-- 페이지 할당 과정 -->
+  <rect x="100" y="280" width="120" height="60" fill="#9c27b0" stroke="#7b1fa2" stroke-width="2" rx="3"/>
+  <text x="160" y="305" text-anchor="middle" font-size="11" font-weight="bold" fill="white">물리 메모리</text>
+  <text x="160" y="320" text-anchor="middle" font-size="11" fill="white">페이지 찾기</text>
+  
+  <rect x="250" y="280" width="120" height="60" fill="#673ab7" stroke="#512da8" stroke-width="2" rx="3"/>
+  <text x="310" y="305" text-anchor="middle" font-size="11" font-weight="bold" fill="white">페이지 테이블</text>
+  <text x="310" y="320" text-anchor="middle" font-size="11" fill="white">업데이트</text>
+  
+  <rect x="400" y="280" width="120" height="60" fill="#3f51b5" stroke="#303f9f" stroke-width="2" rx="3"/>
+  <text x="460" y="305" text-anchor="middle" font-size="11" font-weight="bold" fill="white">가상 메모리</text>
+  <text x="460" y="320" text-anchor="middle" font-size="11" fill="white">매핑</text>
+  
+  <rect x="550" y="280" width="120" height="60" fill="#2196f3" stroke="#1976d2" stroke-width="2" rx="3"/>
+  <text x="610" y="305" text-anchor="middle" font-size="11" font-weight="bold" fill="white">TLB 업데이트</text>
+  <text x="610" y="320" text-anchor="middle" font-size="11" fill="white">캐시 무효화</text>
+  
+  <!-- 화살표들 -->
+  <path d="M 220 310 L 250 310" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 370 310 L 400 310" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 520 310 L 550 310" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- 컨텍스트 스위칭 부분 -->
+  <rect x="100" y="360" width="570" height="50" fill="#ffcdd2" stroke="#f44336" stroke-width="2" rx="3"/>
+  <text x="385" y="385" text-anchor="middle" font-size="13" font-weight="bold" fill="#d32f2f">이 과정 동안 현재 스레드는 BLOCKED 상태</text>
+  <text x="385" y="400" text-anchor="middle" font-size="11" fill="#666">→ 운영체제가 다른 스레드로 컨텍스트 스위칭 수행</text>
+  
+  <!-- 복귀 과정 -->
+  <path d="M 100 440 L 100 500" stroke="#4caf50" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="20" y="470" font-size="11" fill="#4caf50" font-weight="bold" transform="rotate(-90, 20, 470)">작업 완료</text>
+  
+  <!-- 사용자 모드 복귀 -->
+  <rect x="50" y="510" width="700" height="70" fill="#e8f5e8" stroke="#4caf50" stroke-width="2" rx="5"/>
+  <text x="70" y="535" font-size="14" font-weight="bold" fill="#388e3c">사용자 모드 복귀</text>
+  
+  <rect x="100" y="545" width="180" height="25" fill="#4caf50" stroke="#388e3c" stroke-width="1" rx="3"/>
+  <text x="190" y="562" text-anchor="middle" font-size="11" font-weight="bold" fill="white">스레드 실행 재개</text>
+  
+  <rect x="320" y="545" width="200" height="25" fill="#66bb6a" stroke="#4caf50" stroke-width="1" rx="3"/>
+  <text x="420" y="562" text-anchor="middle" font-size="11" font-weight="bold" fill="white">메모리 할당 완료</text>
+  
+  <rect x="560" y="545" width="150" height="25" fill="#81c784" stroke="#66bb6a" stroke-width="1" rx="3"/>
+  <text x="635" y="562" text-anchor="middle" font-size="11" font-weight="bold" fill="white">작업 계속 진행</text>
+  
+  <!-- 시간 표시 -->
+  <text x="750" y="310" font-size="12" fill="#f44336" font-weight="bold">수십 μs ~ 수 ms</text>
+  <path d="M 720 280 L 720 340" stroke="#f44336" stroke-width="2" fill="none"/>
+  <path d="M 715 285 L 720 280 L 725 285" stroke="#f44336" stroke-width="2" fill="none"/>
+  <path d="M 715 335 L 720 340 L 725 335" stroke="#f44336" stroke-width="2" fill="none"/>
+  
+  <!-- 화살표 정의 -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+</svg>

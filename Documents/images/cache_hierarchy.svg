@@ -1,0 +1,52 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- CPU 코어 -->
+  <rect x="350" y="50" width="100" height="60" fill="#ff5722" stroke="#d84315" stroke-width="2" rx="5"/>
+  <text x="400" y="85" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="white">CPU 코어</text>
+  
+  <!-- L1 캐시 -->
+  <rect x="320" y="130" width="160" height="50" fill="#ff9800" stroke="#f57c00" stroke-width="2" rx="5"/>
+  <text x="400" y="155" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold">L1 캐시 (32-64KB)</text>
+  <text x="400" y="170" text-anchor="middle" font-family="Arial" font-size="10">1-2 사이클</text>
+  
+  <!-- L2 캐시 -->
+  <rect x="290" y="200" width="220" height="50" fill="#ffc107" stroke="#ff8f00" stroke-width="2" rx="5"/>
+  <text x="400" y="225" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold">L2 캐시 (256KB-1MB)</text>
+  <text x="400" y="240" text-anchor="middle" font-family="Arial" font-size="10">3-10 사이클</text>
+  
+  <!-- L3 캐시 -->
+  <rect x="250" y="270" width="300" height="50" fill="#ffeb3b" stroke="#fbc02d" stroke-width="2" rx="5"/>
+  <text x="400" y="295" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold">L3 캐시 (8-32MB)</text>
+  <text x="400" y="310" text-anchor="middle" font-family="Arial" font-size="10">30-50 사이클</text>
+  
+  <!-- 메인 메모리 -->
+  <rect x="200" y="340" width="400" height="50" fill="#4caf50" stroke="#388e3c" stroke-width="2" rx="5"/>
+  <text x="400" y="365" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">메인 메모리 (RAM)</text>
+  <text x="400" y="380" text-anchor="middle" font-family="Arial" font-size="10" fill="white">100-300 사이클</text>
+  
+  <!-- 화살표들 -->
+  <path d="M 400 110 L 400 130" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 400 180 L 400 200" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 400 250 L 400 270" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 400 320 L 400 340" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 속도 표시 -->
+  <text x="50" y="85" font-family="Arial" font-size="12" font-weight="bold" fill="#ff5722">빠름</text>
+  <text x="50" y="380" font-family="Arial" font-size="12" font-weight="bold" fill="#4caf50">느림</text>
+  
+  <!-- 캐시 라인 설명 -->
+  <rect x="550" y="130" width="220" height="120" fill="#f5f5f5" stroke="#666" stroke-width="1" rx="5"/>
+  <text x="560" y="150" font-family="Arial" font-size="12" font-weight="bold">캐시 라인 (Cache Line)</text>
+  <text x="560" y="170" font-family="Arial" font-size="10">• 크기: 64바이트</text>
+  <text x="560" y="185" font-family="Arial" font-size="10">• 데이터 전송 최소 단위</text>
+  <text x="560" y="200" font-family="Arial" font-size="10">• 연속된 메모리 영역</text>
+  <text x="560" y="225" font-family="Arial" font-size="10" fill="#d32f2f">주의: False Sharing</text>
+  <text x="560" y="240" font-family="Arial" font-size="10">여러 스레드가 같은</text>
+  <text x="560" y="250" font-family="Arial" font-size="10">캐시 라인을 수정하면 성능 저하!</text>
+  
+  <!-- 화살표 마커 정의 -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+</svg>
