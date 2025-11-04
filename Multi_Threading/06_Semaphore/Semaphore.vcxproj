@@ -24,7 +24,6 @@
     <ProjectGuid>{7fdcb984-fa72-4a4b-8329-86ba34db86ae}</ProjectGuid>
     <RootNamespace>Semaphore</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>06_Semaphore</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

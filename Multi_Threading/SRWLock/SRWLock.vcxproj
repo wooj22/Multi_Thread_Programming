@@ -24,6 +24,7 @@
     <ProjectGuid>{bc52481d-c3f9-4743-8426-999810dd0f09}</ProjectGuid>
     <RootNamespace>SRWLock</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>09_SRWLock</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
