@@ -84,5 +84,17 @@
     <ClCompile Include="23_memory_order.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="24_atomic_flag.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="25_test.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="26_atomic_wait_notify.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="27_compare_exchange_weak_strong.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -22,6 +22,9 @@
     <Filter Include="소스 파일\8">
       <UniqueIdentifier>{8f966737-8485-4bc8-be37-e614af5cfd5c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\9">
+      <UniqueIdentifier>{71b69b9a-bd76-475a-9308-6b34aea7f1a8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Lab1.cpp">
@@ -80,6 +83,27 @@
     </ClCompile>
     <ClCompile Include="Lab8-10.cpp">
       <Filter>소스 파일\8</Filter>
+    </ClCompile>
+    <ClCompile Include="Lab9-1.cpp">
+      <Filter>소스 파일\9</Filter>
+    </ClCompile>
+    <ClCompile Include="Lab9-2.cpp">
+      <Filter>소스 파일\9</Filter>
+    </ClCompile>
+    <ClCompile Include="Lab9-3.cpp">
+      <Filter>소스 파일\9</Filter>
+    </ClCompile>
+    <ClCompile Include="Lab9-4.cpp">
+      <Filter>소스 파일\9</Filter>
+    </ClCompile>
+    <ClCompile Include="Lab9-5.cpp">
+      <Filter>소스 파일\9</Filter>
+    </ClCompile>
+    <ClCompile Include="Lab9-6.cpp">
+      <Filter>소스 파일\9</Filter>
+    </ClCompile>
+    <ClCompile Include="Lab9-7.cpp">
+      <Filter>소스 파일\9</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

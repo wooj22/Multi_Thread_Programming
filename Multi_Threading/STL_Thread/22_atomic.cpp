@@ -14,6 +14,9 @@
    - compare_exchange_strong(compare, new) : Compare-And-Swap (CAS) 함수
                                                      value == compare이라면 new로 변경하고 true 반환
                                                      value != compare이라면 compare을 value로 변경하고 false 반환
+   - compare_exchange_weak()(compare, new) : 약한 Compare-And-Swap (CAS) 함수 -> 반복 조건문으로 사용
+                                                     value == compare이라면 new로 변경하고 true 반환
+                                                     value != compare이라면 compare을 value로 변경하고 false 반환
    
    정수형만 가능한 연산
    - fetch_add(int n) : n만큼 증가 후, 이전 값 반환
