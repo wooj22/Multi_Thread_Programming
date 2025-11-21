@@ -41,12 +41,12 @@ int main()
 
 	for (int i = 0; i < 5; i++)
 	{
-		senders.emplace_back(thread(Deposit));
+		senders.emplace_back(Deposit);
 	}
 
 	for (int i = 0; i < 5; i++)
 	{
-		receivers.emplace_back(thread(Withdrawal));
+		receivers.emplace_back(Withdrawal);
 	}
 
 	for (int i = 0; i < 5; i++)
